@@ -1,27 +1,30 @@
--- جدول المستخدمين
-CREATE TABLE users (
+CREATE DATABASE IF NOT EXISTS hotel_booking;
+USE hotel_booking;
+
+CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(255)
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
 );
 
--- جدول الغرف
-CREATE TABLE rooms (
+CREATE TABLE IF NOT EXISTS rooms (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    room_number VARCHAR(10) NOT NULL,
-    type VARCHAR(50) NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    status ENUM('available','booked') DEFAULT 'available'
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
 );
 
--- جدول الحجوزات
-CREATE TABLE bookings (
+INSERT INTO rooms (id, name, price) VALUES
+(1, 'chambre luxe', 30000),
+(2, 'chambre double', 20000),
+(3, 'chambre simple', 10000);
+
+CREATE TABLE IF NOT EXISTS bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     room_id INT NOT NULL,
     check_in DATE NOT NULL,
     check_out DATE NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (room_id) REFERENCES rooms(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE
 );
+
