@@ -13,8 +13,8 @@
         <h1>🏨 HOTEL AL RAHA GOLDEN</h1>
         <nav>
             <ul>
-                <li><a href="#home">MAISON</a></li>
-                <li><a href="#rooms">CHAMBRES</a></li>
+                <li><a href="#home">mison</a></li>
+                <li><a href="#rooms">chambres</a></li>
                 <li><a href="#booking">Réservez maintenant</a></li>
                 <li><a href="#contact">Contactez-nous</a></li>
             </ul>
@@ -76,7 +76,7 @@
             <label for="checkout">La date de sorte:</label>
             <input type="date" id="checkout" name="check_out" required>
 
-            <button type="submit" class="btn">conferme la réservation</button>
+            <button type="submit" class="btn">confermz la réservation</button>
         </form>
     </section>
 
@@ -85,10 +85,11 @@
         <h2>contact-nous</h2>
         <p>La : Rue Al Raha _ skikdaa</p>
         <p>📞  Teléphon: 0300995566</p>
-        <p>📧 Email: contact@hotel al raha golden.com</p>
+        <p>📧 Email: contact@hotelalrahagolden.com</p>
     </section>
 
    
-
+<script src="js/main.js"></script>
+                
 </body>
 </html>
